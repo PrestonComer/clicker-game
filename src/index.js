@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import {Game, IntroBot} from "./game";
 import reportWebVitals from './reportWebVitals';
+
+import './index.css';
+import IntroBot from "./bot";
+import Click from "./click";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <Game />
-        <IntroBot name="Preston" />
+        <Click 
+            bankedMoney={0}/>
+        <IntroBot 
+            bankedMoney={10}
+            name="Preston"/>
     </React.StrictMode>
 );
 
