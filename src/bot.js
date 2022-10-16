@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Bank } from "./cTest";
 
-export default function IntroBot({bankedMoney, name}) {
+export default function IntroBot({startingCost, name}) {
+    // startingCost, costFormula, gainFormula, name}) {
     const [level, setLevel] = useState(0);
-    const [cost, setCost] = useState(10);
+    const [cost, setCost] = useState(startingCost);
     const [gain, setGain] = useState(0);
-    const [bank, setBank] = useState(bankedMoney);
+
+    const [bank, setBank] = useContext(Bank);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -38,7 +41,7 @@ export default function IntroBot({bankedMoney, name}) {
     return (
         <div className="bot">
             <p className='name'>
-                <strong>{name}</strong> ({bank})
+                <strong>{name}</strong>
             </p>
             <p className='cost'>
                 <strong>Cost: </strong>{cost}
@@ -48,5 +51,5 @@ export default function IntroBot({bankedMoney, name}) {
             </p>
             {canUpgrade()}
         </div>
-        )
+    )
 }

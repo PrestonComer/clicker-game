@@ -1,10 +1,13 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
+// import { BankedMoney } from './index';
+import { Bank } from "./cTest";
 
-export default function Click({bankedMoney}) {
+export default function Click() {
     const [level, setLevel] = useState(1);
     const [cost, setCost] = useState(10);
     const [gain, setGain] = useState(1);
-    const [bank, setBank] = useState(bankedMoney);
+
+    const [bank, setBank] = useContext(Bank);
 
     function upgradeClicker(e) {
         setLevel(level + 1);
@@ -30,7 +33,6 @@ export default function Click({bankedMoney}) {
     };
     function earnMoney(e) {
         setBank(bank + gain);
-        return bank;
     };
     return (
         <div>
