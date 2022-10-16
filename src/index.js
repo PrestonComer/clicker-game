@@ -5,10 +5,11 @@ import {Game, IntroBot} from "./game";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <React.StrictMode>
         <Game />
-        <IntroBot name="Preston"/>
+        <IntroBot name="Preston" />
     </React.StrictMode>
 );
 
