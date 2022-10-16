@@ -14,7 +14,7 @@ export default function IntroBot({startingCost, name}) {
             setBank(bank + gain);
         }, 1000);
         return () => clearInterval(interval);
-    }, [bank, gain]);
+    });
 
     function upgradeBot(e) {
         setLevel(level + 1);
