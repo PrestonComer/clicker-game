@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 // import { BankedMoney } from './index';
-import { Bank } from "./cTest";
+import { Bank, GPC } from "./cTest";
 
 export default function Click() {
     const [level, setLevel] = useState(1);
     const [cost, setCost] = useState(10);
-    const [gain, setGain] = useState(1);
 
     const [bank, setBank] = useContext(Bank);
+    const [gpc, setGPC] = useContext(GPC);
 
     function upgradeClicker(e) {
         setLevel(level + 1);
         setCost(cost + (level * 2));
-        setGain(gain + 1);
+        setGPC(gpc + 1);
         setBank(bank - cost);
     };
     function canUpgrade(e) {
@@ -20,7 +20,7 @@ export default function Click() {
             return (
                 <button 
                     onClick={upgradeClicker}>
-                    Upgrade Gain Per Click
+                    Upgrade
                 </button>
             )
         } else {
@@ -31,25 +31,11 @@ export default function Click() {
             )
         }
     };
-    function earnMoney(e) {
-        setBank(bank + gain);
-    };
     return (
         <div>
-            <p>
-                <strong>Bank: </strong>{bank}
-            </p>
-            <p>
-                <strong>Level: </strong>{level}
-            </p>
-            <p>
-                <strong>Cost: </strong>{cost}
-            </p>
-            
-            <button 
-                onClick={earnMoney}>
-                Click
-            </button>
+            <p><strong>Clicker</strong></p>
+            <p><strong>Cost: </strong>{cost}</p>
+            <p><strong>Profit Per Click: </strong>{level}</p>
             {canUpgrade()}
         </div>
     )

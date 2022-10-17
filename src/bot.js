@@ -6,7 +6,6 @@ export default function IntroBot({startingCost, name}) {
     const [level, setLevel] = useState(0);
     const [cost, setCost] = useState(startingCost);
     const [gain, setGain] = useState(0);
-
     const [bank, setBank] = useContext(Bank);
 
     useEffect(() => {
@@ -27,7 +26,7 @@ export default function IntroBot({startingCost, name}) {
             return (
                 <button
                     onClick={upgradeBot}>
-                    Upgrade Bot
+                    Upgrade
                 </button>
             )
         } else {
@@ -39,16 +38,10 @@ export default function IntroBot({startingCost, name}) {
         }   
     };
     return (
-        <div className="bot">
-            <p className='name'>
-                <strong>{name}</strong>
-            </p>
-            <p className='cost'>
-                <strong>Cost: </strong>{cost}
-            </p>
-            <p className='profit'>
-                <strong>PPs: </strong>{gain}
-            </p>
+        <div>
+            <p><strong>{name}</strong></p>
+            <p><strong>Cost: </strong>{cost}</p>
+            <p><strong>Profit Per Second: </strong>{gain}</p>
             {canUpgrade()}
         </div>
     )
