@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Bank, GPC } from './cTest.js';
+import { Bank, GPC } from './context.js';
 
 export default function Clicker() {
     const [bank, setBank] = useContext(Bank);
-    const [gpc, setGPC] = useContext(GPC);
+    const [gpc] = useContext(GPC);
 
     function earnMoney(e) {
         setBank(bank + gpc);
@@ -12,7 +12,7 @@ export default function Clicker() {
     return (
         <button
             onClick={earnMoney}>
-            Click Me
+            Click To Earn
         </button>
     )
 }

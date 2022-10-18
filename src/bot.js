@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Bank } from "./cTest";
+import { Bank } from "./context";
 
 export default function IntroBot({startingCost, name}) {
     // startingCost, costFormula, gainFormula, name}) {
@@ -26,7 +26,7 @@ export default function IntroBot({startingCost, name}) {
             return (
                 <button
                     onClick={upgradeBot}>
-                    Upgrade
+                    Upgrade Bot
                 </button>
             )
         } else {

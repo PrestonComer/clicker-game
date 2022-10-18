@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Bank } from './cTest';
+import { Bank } from './context';
 
 export default function BankCounter(){
     const [bank, setBank] = useContext(Bank);

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 // import { BankedMoney } from './index';
-import { Bank, GPC } from "./cTest";
+import { Bank, GPC } from "./context";
 
 export default function Click() {
     const [level, setLevel] = useState(1);
@@ -20,7 +20,7 @@ export default function Click() {
             return (
                 <button 
                     onClick={upgradeClicker}>
-                    Upgrade
+                    Upgrade Click To Earn
                 </button>
             )
         } else {
@@ -33,7 +33,7 @@ export default function Click() {
     };
     return (
         <div>
-            <p><strong>Clicker</strong></p>
+            <p><strong>Clicks</strong></p>
             <p><strong>Cost: </strong>{cost}</p>
             <p><strong>Profit Per Click: </strong>{level}</p>
             {canUpgrade()}

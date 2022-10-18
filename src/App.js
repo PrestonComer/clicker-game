@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './index.css';
 import IntroBot from "./bot";
 import Click from "./click";
-import { Bank, GPC } from "./cTest";
+import { Bank, GPC } from "./context";
 import BankCounter from "./bankCounter";
 import Clicker from "./clicker";
 
@@ -38,19 +38,9 @@ export default function App() {
 
                         <Col>
                             <Alert key={'primary'} variant={'primary'}>
-                                <IntroBot name="Thor" startingCost={10} />
+                                <IntroBot name="Bot" startingCost={5} />
                             </Alert>
                         </Col>
-                    </Row>
-
-                    <Row className='text-center'>
-                        <Col>
-                            <Alert key={'primary'} variant={'primary'}>
-                                <IntroBot name="Ooze" startingCost={1} />
-                            </Alert>
-                        </Col>
-
-                        <Col></Col>
                     </Row>
                 </Container>
             </GPC.Provider>
